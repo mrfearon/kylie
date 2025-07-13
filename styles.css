@@ -1,0 +1,239 @@
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #F8E1E9, #E6D3C8);
+  text-align: center;
+  overflow-x: hidden;
+  animation: gentleGlow 3s infinite alternate;
+}
+
+@keyframes gentleGlow {
+  from { background-color: #F8E1E9; }
+  to { background-color: #E6D3C8; }
+}
+
+.content {
+  padding: 20px 10px;
+  animation: slideUp 1s ease-out;
+  max-width: 400px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.logo {
+  width: 150px;
+  margin: 10px auto;
+  filter: drop-shadow(0 0 10px rgba(248, 225, 233, 0.8));
+  transition: transform 0.5s;
+}
+
+.logo:hover {
+  transform: rotate(5deg) scale(1.1);
+}
+
+h1 {
+  font-size: 1.6em;
+  color: #000000;
+  font-weight: bold;
+  margin: 10px 0;
+  text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.7);
+}
+
+h3 {
+  font-size: 1.2em;
+  color: #000000;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.steps-chart {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.step-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.step {
+  background: rgba(255, 255, 255, 0.9);
+  color: #000000;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin: 5px 0;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  width: 90%;
+  text-align: center;
+}
+
+.step:hover {
+  transform: scale(1.05);
+}
+
+.faq-chart {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.faq-item {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+  width: 90%;
+}
+
+.faq-question {
+  padding: 10px 20px;
+  font-weight: bold;
+  color: #000000;
+  cursor: pointer;
+  background: #F8E1E9;
+  text-align: center;
+}
+
+.faq-answer {
+  padding: 10px 20px;
+  color: #000000;
+  display: none;
+  background: rgba(248, 225, 233, 0.5);
+  text-align: center;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+.get-btn {
+  display: block;
+  background: #000000;
+  color: #FFFFFF;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 15px auto;
+  width: 60%;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4), 0 0 10px rgba(248, 225, 233, 0.3);
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.4s ease;
+}
+
+.get-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.get-btn:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(248, 225, 233, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.get-btn:hover:before {
+  width: 120px;
+  height: 120px;
+}
+
+.notification {
+  position: relative;
+  margin: 10px auto;
+  background: rgba(248, 225, 233, 0.9);
+  color: #000000;
+  font-weight: bold;
+  padding: 8px 15px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  display: none;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.9em;
+  animation: popIn 0.5s ease-out;
+  z-index: 1000;
+  width: 90%;
+  text-align: center;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 480px) {
+  .content {
+    padding: 15px 5px;
+  }
+  h1 {
+    font-size: 1.4em;
+  }
+  h3 {
+    font-size: 1em;
+  }
+  .steps-chart {
+    font-size: 0.85em;
+  }
+  .faq-chart {
+    font-size: 0.85em;
+  }
+  .get-btn {
+    font-size: 0.9em;
+    padding: 10px 15px;
+    width: 70%;
+  }
+  .logo {
+    width: 120px;
+  }
+  .step {
+    padding: 8px 12px;
+    margin: 4px 0;
+    width: 95%;
+  }
+  .faq-item {
+    padding: 8px 12px;
+    margin: 4px 0;
+    width: 95%;
+  }
+  .faq-question {
+    padding: 8px 12px;
+  }
+  .faq-answer {
+    padding: 8px 12px;
+  }
+  .notification {
+    width: 95%;
+  }
+}
